@@ -1,0 +1,5 @@
+name: DiscordBotForMinecraft
+version: '${project.version}'
+main: me.edinop0jek.discordbotforminecraft.DiscordBotForMinecraft
+api-version: 1.19
+authors: [Edinop0Jek/Tra-ta-ta]
