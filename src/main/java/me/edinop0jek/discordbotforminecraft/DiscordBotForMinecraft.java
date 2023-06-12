@@ -1,22 +1,21 @@
 package me.edinop0jek.discordbotforminecraft;
 
 
-import me.edinop0jek.discordbotforminecraft.events.Events;
-import net.dv8tion.jda.api.JDA;
-import net.dv8tion.jda.api.JDABuilder;
-
-import org.bukkit.Bukkit;
+import me.edinop0jek.discordbotforminecraft.MinecraftEvent.ChatEvent;
 import org.bukkit.plugin.java.JavaPlugin;
+import me.edinop0jek.discordbotforminecraft.DiscordBot.Bot;
 
 public final class DiscordBotForMinecraft extends JavaPlugin{
 
+    public static DiscordBotForMinecraft instance;
     @Override
     public void onEnable() {
-        JDA jda = JDABuilder.createDefault("OTY0ODk2MjY0MTM3MzUxMTk4.GTDdl1.Y8HfPyy5bcl3ba4WcBr5GiSa5FnWAhLevIAfns")
-                .build();
+        instance = this;
 
-        Bukkit.getPluginManager().registerEvents(new Events(), this);
+        saveDefaultConfig();
 
+        getServer().getPluginManager().registerEvents(new ChatEvent(), this);
+        System.out.println(Bot.bot);
     }
 
     @Override
