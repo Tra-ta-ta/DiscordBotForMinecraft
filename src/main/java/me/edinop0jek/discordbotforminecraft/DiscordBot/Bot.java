@@ -12,7 +12,7 @@ public class Bot {
 
     public static final Bot bot = new Bot();
 
-    private JDA jda = JDABuilder.createDefault(Varibles.token).build();
+    private JDA jda = JDABuilder.createDefault(Varibles.token).addEventListeners(new commands()).build();
     private Guild guild;
     private TextChannel textChannel;
 
