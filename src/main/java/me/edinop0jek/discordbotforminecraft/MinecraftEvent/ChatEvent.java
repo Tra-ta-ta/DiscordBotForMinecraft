@@ -32,8 +32,5 @@ public class ChatEvent implements Listener {
         }
     }
 
-    @EventHandler
-    public void onLeave(){
 
-    }
 }

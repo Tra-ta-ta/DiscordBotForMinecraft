@@ -1,9 +1,10 @@
 package me.edinop0jek.discordbotforminecraft;
 
 
+import io.papermc.paper.event.player.ChatEvent;
+import me.edinop0jek.discordbotforminecraft.DiscordBot.Bot;
 import me.edinop0jek.discordbotforminecraft.MinecraftEvent.ChatEvent;
 import org.bukkit.plugin.java.JavaPlugin;
-import me.edinop0jek.discordbotforminecraft.DiscordBot.Bot;
 
 public final class DiscordBotForMinecraft extends JavaPlugin{
 
@@ -14,7 +15,8 @@ public final class DiscordBotForMinecraft extends JavaPlugin{
 
         saveDefaultConfig();
 
-        getServer().getPluginManager().registerEvents(new ChatEvent(), this);
+        getServer().getPluginManager().registerEvents(new ChatEvent(),
+                this);
         System.out.println(Bot.bot);
     }
 

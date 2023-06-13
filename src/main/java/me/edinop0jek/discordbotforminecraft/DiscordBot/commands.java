@@ -16,12 +16,13 @@ public class commands extends ListenerAdapter {
         TextChannel tc = event.getChannel().asTextChannel();
 
         if(!event.getAuthor().isBot()){
-            if(msg.getContentRaw().equals("/list")){
-                String list = null;
+            if(msg.getContentRaw().equals("&list")){
+                String list;
+                list = "";
                 for (Player p: Bukkit.getOnlinePlayers()){
-                    list = p.getName() + " ";
+                    list += p.getName() + " ";
                 }
-                if(list == null){
+                if(list == ""){
                     tc.sendMessage("Сейчас никого на сервере нет").queue();
                 }else {
                     tc.sendMessage(list).queue();

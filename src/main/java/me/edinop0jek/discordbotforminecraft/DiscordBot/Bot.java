@@ -7,12 +7,15 @@ import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
+import net.dv8tion.jda.api.requests.GatewayIntent;
 
 public class Bot {
 
     public static final Bot bot = new Bot();
 
-    private JDA jda = JDABuilder.createDefault(Varibles.token).addEventListeners(new commands()).build();
+    private JDA jda = JDABuilder.createDefault(Varibles.token).addEventListeners(new commands())
+            .enableIntents(GatewayIntent.MESSAGE_CONTENT,GatewayIntent.GUILD_MEMBERS,GatewayIntent.GUILD_MESSAGES)
+            .build();
     private Guild guild;
     private TextChannel textChannel;
 
