@@ -28,6 +28,8 @@ public class commands extends ListenerAdapter {
                     tc.sendMessage(list).queue();
                 }
             }
+
+            Bot.bot.messageToMinecraft(event.getAuthor().getName(), event.getMessage().getContentRaw());
         }
     }
 }

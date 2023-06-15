@@ -8,6 +8,9 @@ import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import net.dv8tion.jda.api.requests.GatewayIntent;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.TextComponent;
+import org.bukkit.Server;
 
 public class Bot {
 
@@ -33,4 +36,12 @@ public class Bot {
         textChannel.sendMessage("<"+namePlayer+">"+": "+msg).queue();
     }
 
+    public void messageToMinecraft(String namePlayer, String msg){
+        Server server = DiscordBotForMinecraft.instance.getServer();
+        TextComponent text = Component.text().append(Component.text(namePlayer))
+                .append(Component.text(": "))
+                .append(Component.text(msg)).build();
+
+        server.broadcast(text);
+    }
 }
